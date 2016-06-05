@@ -3,4 +3,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :product_types
+  has_many :products, through: :product_types
 end
