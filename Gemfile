@@ -9,6 +9,11 @@ gem 'puma', '~> 3.0'
 gem 'active_model_serializers' #only spit out the specified columns
 gem 'rack-cors'   #enable cross-origin resource sharing
 gem 'rack-attack' #rate limit api calls and whitelist
+gem "figaro"
+
+gem 'devise'
+gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
+gem 'omniauth' # required for devise_token_auth
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
