@@ -12,7 +12,8 @@ gem 'rack-attack' #rate limit api calls and whitelist
 gem "figaro"
 
 gem 'devise'
-gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
+gem 'devise_token_auth', github:"lynndylanhurley/devise_token_auth", branch: "master"
+# gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
 gem 'omniauth' # required for devise_token_auth
 
 # Use Redis adapter to run Action Cable in production
@@ -38,6 +39,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
