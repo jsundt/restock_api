@@ -18,7 +18,7 @@ module Api::V1
       @product_type = @team.product_types.new(product_type_params)
 
       if @product_type.save
-        render json: @product_type, status: :created, location: @product_type
+        render json: @product_type, status: :created
         # render json: @product_type, status: :created, location: respond_with(:api, :v1, @product_type)
       else
         render json: @product_type.errors, status: :unprocessable_entity
