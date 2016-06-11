@@ -10,17 +10,17 @@ module Api::V1
     end
 
     def create
-      @team = Team.new(team_create_params)
+      @team = Team.new(team_params)
 
       if @team.save
-        render json: @team, status: :created, location: respond_with(:api, :v1, @team)
+        render json: @team, status: :created, location: @team
       else
         render json: @team.errors, status: :unprocessable_entity
       end
     end
 
     def update
-      if @team.update(team_update_params)
+      if @team.update(team_params)
         render json: @team
       else
         render json: @team.errors, status: :unprocessable_entity
@@ -35,11 +35,7 @@ module Api::V1
         @team = current_v1_user.team
       end
 
-      def team_create_params
-        params.require(:team).permit(:name, :secret)
-      end
-
-      def team_update_params
+      def team_params
         params.require(:team).permit(:name)
       end
   end

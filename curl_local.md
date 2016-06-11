@@ -1,4 +1,4 @@
-curl -i -X POST -H "Content-Type: application/json" -d "{\"name\":\"Køny Kløs\", \"secret\":\"test123\"}" http://localhost:3000/v1/teams
+curl -i -X POST -H "Content-Type: application/json" -d "{\"name\":\"Køny Kløs1\", \"secret\":\"test123\"}" http://localhost:3000/v1/teams
 
 curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"hattemaker@gmail.com\",\"password\":\"mikemike\",\"password_confirmation\":\"mikemike\",\"name\":\"Jay\",\"team_id\":1}" http://localhost:3000/v1/auth
 
