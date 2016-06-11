@@ -1,22 +1,19 @@
 module Api::V1
   class ProductTypesController < ApiController
     before_action :authenticate_v1_user!
+    before_action :set_team, only: [:index, :show, :create]
     before_action :set_product_type, only: [:show, :update, :destroy]
-    before_action :set_team, only: [:index, :create]
 
-    # GET /product_types
+
+
     def index
-      @product_types = @team.product_types
-
-      render json: @product_types
+      render json: @team.product_types
     end
 
-    # GET /product_types/1
     def show
       render json: @product_type
     end
 
-    # POST /product_types
     def create
       @product_type = @team.product_types.new(product_type_params)
 
@@ -28,7 +25,6 @@ module Api::V1
       end
     end
 
-    # PATCH/PUT /product_types/1
     def update
       if @product_type.update(product_type_params)
         render json: @product_type
@@ -37,12 +33,14 @@ module Api::V1
       end
     end
 
-    # DELETE /product_types/1
     def destroy
       @product_type.destroy
     end
 
+
+
     private
+
       def set_team
         @team = current_v1_user.team
       end

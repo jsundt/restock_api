@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :team_id, :presence => true
   validates :name, :presence => true
-  # validates_associated :team
+  validates_associated :team
 
   belongs_to :team
 end

@@ -6,5 +6,5 @@ class ProductType < ApplicationRecord
   validates_associated :team
 
   belongs_to :team
-  has_many :products
+  has_many :products, dependent: :destroy
 end

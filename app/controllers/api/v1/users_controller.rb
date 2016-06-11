@@ -1,12 +1,9 @@
 module Api::V1
   class UsersController < ApiController
     before_action :authenticate_v1_user!, only: [:index, :show]
-    before_action :set_user, only: [:show]
+    before_action :set_user, only: [:show, :update]
 
-    # GET /v1/users
-    # def index
-    #   render json: User.all
-    # end
+
 
     def show
       render json: @user
@@ -22,12 +19,21 @@ module Api::V1
       end
     end
 
+    def update
+      if @user.update
+        render json: @user
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
+    end
+
 
 
     private
 
-    def set_user
-      @user = User.find(params[:id])
-    end
+      def set_user
+        # @user = User.find(params[:id])
+        @user = current_v1_user
+      end
   end
 end
