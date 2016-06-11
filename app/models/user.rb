@@ -4,6 +4,9 @@ class User < ApplicationRecord
           :omniauthable
   include DeviseTokenAuth::Concerns::User
 
-  has_many :product_types
-  has_many :products, through: :product_types
+  validates :team_id, :presence => true
+  validates :name, :presence => true
+  # validates_associated :team
+
+  belongs_to :team
 end

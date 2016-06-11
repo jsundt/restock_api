@@ -2,10 +2,11 @@ module Api::V1
   class ProductsController < ApiController
     before_action :authenticate_v1_user!
     before_action :set_product, only: [:show, :update, :destroy]
+    before_action :set_team, only: [:index, :create]
 
     # GET /products
     def index
-      @products = current_v1_user.products
+      @products = @team.products
 
       render json: @products
     end
@@ -17,7 +18,7 @@ module Api::V1
 
     # POST /products
     def create
-      @product = current_v1_user.product_types.find(params[:product_type_id]).products.new(product_params)
+      @product = @team.product_types.find(params[:product_type_id]).products.new(product_params)
 
       if @product.save
         render json: @product, status: :created, location: @product
@@ -41,12 +42,14 @@ module Api::V1
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_product
-        @product = current_v1_user.products.find(params[:id])
+      def set_team
+        @team = current_v1_user.team
       end
 
-      # Only allow a trusted parameter "white list" through.
+      def set_product
+        @product = @team.products.find(params[:id])
+      end
+
       def product_params
         params.require(:product).permit(:name, :amount_needed, :amount_in_stock, :product_type_id)
       end

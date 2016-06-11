@@ -12,7 +12,7 @@ gem 'rack-attack' #rate limit api calls and whitelist
 gem "figaro"
 
 gem 'devise'
-gem 'devise_token_auth', github:"lynndylanhurley/devise_token_auth", branch: "master"
+gem 'devise_token_auth', github:"lynndylanhurley/devise_token_auth", branch: "master" # rubygems version doesn't work in production rails 5 atm
 # gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
 gem 'omniauth' # required for devise_token_auth
 

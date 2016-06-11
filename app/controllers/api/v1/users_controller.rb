@@ -4,19 +4,19 @@ module Api::V1
     before_action :set_user, only: [:show]
 
     # GET /v1/users
-    def index
-      render json: User.all
-    end
+    # def index
+    #   render json: User.all
+    # end
 
     def show
       render json: @user
     end
 
     def create
-      @user = User.new(user_params)
+      @user = User.new
 
       if @user.save
-        render json: @user, status: :created, location: @user
+        render json: @user, status: :created, location: respond_with(:api, :v1, @user)
       else
         render json: @user.errors, status: :unprocessable_entity
       end
@@ -28,10 +28,6 @@ module Api::V1
 
     def set_user
       @user = User.find(params[:id])
-    end
-
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
   end
 end
