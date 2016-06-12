@@ -1,7 +1,7 @@
 module Api::V1
   class ProductsController < ApiController
     before_action :authenticate_v1_user!
-    before_action :set_team, only: [:index, :show, :create]
+    before_action :set_team, only: [:index, :show, :create, :destroy]
     before_action :set_product, only: [:show, :update, :destroy]
 
 

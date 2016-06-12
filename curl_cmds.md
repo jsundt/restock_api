@@ -13,15 +13,20 @@ curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"hattemaker@
 
 
 ## SETUP Product type
-curl -i -X POST -H "Content-Type: application/json" -H "access-token: DRi004fJsm7tVb1JEtYcxA" -H "token-type: Bearer" -H "client: fUpj7Oy4pp4hK7qYZEuQNQ" -H "expiry: 1466825057" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Super Food\"}" hhttps://restockapi.herokuapp.com/v1/product_types
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: kJd1UsO_zXwG8xlRGoCNHA" -H "token-type: Bearer" -H "client: s7DQQguVgXcX13T3e4gsmw" -H "expiry: 1466872734" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Super Food\"}" https://restockapi.herokuapp.com/v1/product_types
 
 
 ## SETUP Products
-curl -i -X POST -H "Content-Type: application/json" -H "access-token: DRi004fJsm7tVb1JEtYcxA" -H "token-type: Bearer" -H "client: fUpj7Oy4pp4hK7qYZEuQNQ" -H "expiry: 1466825057" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Kale\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: kJd1UsO_zXwG8xlRGoCNHA" -H "token-type: Bearer" -H "client: s7DQQguVgXcX13T3e4gsmw" -H "expiry: 1466872734" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Kale\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
 
-curl -i -X POST -H "Content-Type: application/json" -H "access-token: DRi004fJsm7tVb1JEtYcxA" -H "token-type: Bearer" -H "client: fUpj7Oy4pp4hK7qYZEuQNQ" -H "expiry: 1466825057" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Goji Berries\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: kJd1UsO_zXwG8xlRGoCNHA" -H "token-type: Bearer" -H "client: s7DQQguVgXcX13T3e4gsmw" -H "expiry: 1466872734" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Goji Berries\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
 
-curl -i -X POST -H "Content-Type: application/json" -H "access-token: DRi004fJsm7tVb1JEtYcxA" -H "token-type: Bearer" -H "client: fUpj7Oy4pp4hK7qYZEuQNQ" -H "expiry: 1466825057" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Fat-free milk\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: kJd1UsO_zXwG8xlRGoCNHA" -H "token-type: Bearer" -H "client: s7DQQguVgXcX13T3e4gsmw" -H "expiry: 1466872734" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Fat-free milk\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" https://restockapi.herokuapp.com/v1/products
+
+
+
+## DELETE product
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: kJd1UsO_zXwG8xlRGoCNHA" -H "token-type: Bearer" -H "client: s7DQQguVgXcX13T3e4gsmw" -H "expiry: 1466872734" -H "uid: hattemaker@gmail.com" -d "{\"id\":"6"}" https://restockapi.herokuapp.com/v1/products
 
 
 
