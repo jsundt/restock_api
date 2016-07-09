@@ -2,22 +2,22 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc2', '< 5.1'
+gem 'rails', '~> 5.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
-gem 'active_model_serializers' #only spit out the specified columns
+gem 'active_model_serializers', '0.10.0' #only spit out the specified columns
 gem 'rack-cors'   #enable cross-origin resource sharing
 gem 'rack-attack' #rate limit api calls and whitelist
-gem "figaro"
+# gem "figaro"
 
-gem 'devise'
+gem 'devise', '4.0.3'
 gem 'devise_token_auth', github:"lynndylanhurley/devise_token_auth", branch: "master" # rubygems version doesn't work in production rails 5 atm
 # gem 'devise_token_auth' # Token based authentication for Rails JSON APIs
 gem 'omniauth' # required for devise_token_auth
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

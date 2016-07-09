@@ -2,6 +2,8 @@ curl -i -X POST -H "Content-Type: application/json" -d "{\"name\":\"Køny Kløs1
 
 curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"hattemaker@gmail.com\",\"password\":\"mikemike\",\"password_confirmation\":\"mikemike\",\"name\":\"Jay\",\"team_id\":1}" http://localhost:3000/v1/auth
 
+curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"hattemaker@gmail.com\",\"password\":\"mikemike\"}" http://localhost:3000/v1/auth/sign_in
+
 <!-- curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"hattemaker+test@gmail.com\",\"password\":\"mikemike\",\"password_confirmation\":\"mikemike\",\"name\":\"Jay\",\"team_id\":2}" http://localhost:3000/v1/auth -->
 
 
@@ -20,7 +22,7 @@ curl -i -X GET -H "Content-Type: application/json" -H "access-token: DRi004fJsm7
 
 
 
-
+curl -i -X POST -H "Content-Type: application/json" -H "access-token: 2_Kx8r5gyxIVKP3XRABeFQ" -H "token-type: Bearer" -H "client: vgRV-AExAfttPt7Byb29og" -H "expiry: 1469285030" -H "uid: hattemaker@gmail.com" -d "{\"name\":\"Super kale\",\"amount_needed\":\"0\",\"amount_in_stock\":\"0\",\"product_type_id\":1}" http://localhost:3000/v1/products
 
 
 

@@ -21,6 +21,13 @@ module Api::V1
 
       if @product.save
         render json: @product, status: :created
+
+        ActionCable.server.broadcast 'products',
+          type: 'create',
+          message: @product.name,
+          user: current_v1_user.name,
+          user_id: current_v1_user.id
+        head :ok
       else
         render json: @product.errors, status: :unprocessable_entity
       end
@@ -36,6 +43,13 @@ module Api::V1
 
     def destroy
       @product.destroy
+
+      ActionCable.server.broadcast 'products',
+        type: 'destroy',
+        message: @product.name,
+        user: current_v1_user.name,
+        user_id: current_v1_user.id
+      head :ok
     end
 
 
